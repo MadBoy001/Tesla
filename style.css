@@ -528,8 +528,8 @@ body::after {
 
 /* ===== SLIDE HEADINGS ===== */
 .slide-heading {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 800;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 900;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
     color: var(--text-primary);
@@ -537,7 +537,7 @@ body::after {
 
 .slide-label {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--tesla-red);
     text-transform: uppercase;
@@ -550,11 +550,11 @@ body::after {
 }
 
 .slide-subtitle {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 400;
     font-style: italic;
-    color: var(--text-dim);
-    max-width: 620px;
+    color: var(--text-secondary);
+    max-width: 680px;
     line-height: 1.6;
     margin-bottom: 36px;
 }
@@ -605,7 +605,7 @@ body::after {
 .info-card:hover::after { opacity: 1; }
 
 .card-value {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 900;
     color: var(--tesla-red);
     line-height: 1.1;
@@ -616,16 +616,16 @@ body::after {
 }
 
 .card-label {
-    font-size: 0.95rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 5px;
     position: relative; z-index: 1;
 }
 
 .card-desc {
-    font-size: 0.82rem;
-    color: var(--text-dim);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
     line-height: 1.5;
     position: relative; z-index: 1;
 }
@@ -683,15 +683,15 @@ body::after {
 }
 
 .strategy-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 800;
     margin-bottom: 5px;
     color: var(--text-primary);
 }
 .strategy-card p {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    line-height: 1.55;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 .strategy-card ul, .card-list {
     list-style: none;
@@ -701,10 +701,10 @@ body::after {
 .strategy-card ul li, .card-list li {
     position: relative;
     padding-left: 14px;
-    font-size: 0.82rem;
-    color: var(--text-dim);
-    line-height: 1.55;
-    margin-bottom: 4px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 5px;
 }
 .strategy-card ul li::before, .card-list li::before {
     content: '';
@@ -758,16 +758,16 @@ body::after {
 
 .stat-val {
     display: block;
-    font-size: 1.7rem;
-    font-weight: 800;
+    font-size: 1.9rem;
+    font-weight: 900;
     color: var(--tesla-red);
     margin-bottom: 4px;
     text-shadow: 0 0 20px var(--tesla-glow);
 }
 .stat-lbl {
     display: block;
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-size: 0.78rem;
+    font-weight: 600;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -810,12 +810,13 @@ body::after {
 }
 .compare-row:last-child { border-bottom: none; }
 .compare-label {
-    font-size: 0.85rem;
-    color: var(--text-dim);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 .compare-val {
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
     color: var(--text-primary);
 }
 .compare-highlight .compare-val {
@@ -1038,10 +1039,10 @@ body::after {
 }
 
 .takeaway p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .closing-line {

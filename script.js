@@ -90,42 +90,70 @@
     }
 
     // =============================================
-    //  ORBIT (slide 1 only)
+    //  FREE ROAM (slide 1 only)
     // =============================================
+    let carX = 0, carY = 0, carAngle = -90; // angle in degrees, -90 = facing up
+    let carSpeed = 2.5;
+    let roamRAF = null;
+    let turnTimer = null;
+
     function startOrbit() {
-        if (orbitAnim) orbitAnim.kill();
+        stopOrbit();
         clearTrail();
         carWrapper.classList.remove('hidden');
 
         const vw = window.innerWidth;
         const vh = window.innerHeight;
-        const cx = vw / 2, cy = vh / 2;
-        const rx = Math.min(vw * 0.32, 420);
-        const ry = Math.min(vh * 0.30, 230);
-        const obj = { a: 0 };
+        carX = vw / 2;
+        carY = vh / 2;
+        carAngle = -90 + (Math.random() * 60 - 30); // start roughly upward
+        carSpeed = 2.5;
 
-        orbitAnim = gsap.to(obj, {
-            a: Math.PI * 2,
-            duration: ORBIT_DURATION,
-            repeat: -1,
-            ease: 'none',
-            onUpdate: () => {
-                const x = cx + Math.cos(obj.a) * rx;
-                const y = cy + Math.sin(obj.a) * ry;
-                const dx = -Math.sin(obj.a) * rx;
-                const dy =  Math.cos(obj.a) * ry;
-                const angle = Math.atan2(dx, dy) * (180 / Math.PI);
+        // Random turn every 3-6 seconds
+        function scheduleTurn() {
+            const delay = 3000 + Math.random() * 3000;
+            turnTimer = setTimeout(() => {
+                const turnAmount = (Math.random() > 0.5 ? 1 : -1) * (40 + Math.random() * 50);
+                gsap.to({ val: carAngle }, {
+                    val: carAngle + turnAmount,
+                    duration: 0.8,
+                    ease: 'power2.inOut',
+                    onUpdate: function() { carAngle = this.targets()[0].val; }
+                });
+                scheduleTurn();
+            }, delay);
+        }
+        scheduleTurn();
 
-                carWrapper.style.left = x + 'px';
-                carWrapper.style.top = y + 'px';
-                carWrapper.style.transform = 'translate(-50%, -50%) rotate(' + (-angle) + 'deg) scale(1)';
-                updateTrail();
-            }
-        });
+        function tick() {
+            const rad = carAngle * Math.PI / 180;
+            carX += Math.cos(rad) * carSpeed;
+            carY += Math.sin(rad) * carSpeed;
+
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            const margin = 60;
+
+            // Wrap around edges
+            if (carX < -margin) carX = vw + margin;
+            if (carX > vw + margin) carX = -margin;
+            if (carY < -margin) carY = vh + margin;
+            if (carY > vh + margin) carY = -margin;
+
+            carWrapper.style.left = carX + 'px';
+            carWrapper.style.top = carY + 'px';
+            // SVG car points up (0deg), so rotate by carAngle + 90
+            carWrapper.style.transform = 'translate(-50%, -50%) rotate(' + (carAngle + 90) + 'deg) scale(1)';
+
+            updateTrail();
+            roamRAF = requestAnimationFrame(tick);
+        }
+        roamRAF = requestAnimationFrame(tick);
     }
 
     function stopOrbit() {
-        if (orbitAnim) { orbitAnim.kill(); orbitAnim = null; }
+        if (roamRAF) { cancelAnimationFrame(roamRAF); roamRAF = null; }
+        if (turnTimer) { clearTimeout(turnTimer); turnTimer = null; }
     }
 
     // =============================================
