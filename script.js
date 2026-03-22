@@ -166,13 +166,10 @@
 
         const dir = idx > currentSlide ? 1 : -1;
         const vw = window.innerWidth, vh = window.innerHeight;
-        const goingToTitle = (idx === 0);
-        const leavingTitle = (currentSlide === 0);
 
-        if (leavingTitle) stopOrbit();
+        // Pause roaming during transition
+        stopOrbit();
         clearTrail();
-
-        // Show car for transition animation
         carWrapper.classList.remove('hidden');
 
         const tl = gsap.timeline({
@@ -183,72 +180,22 @@
                 updateCounter();
                 updateSlideNav();
 
-                if (goingToTitle) {
-                    startOrbit();
-                } else {
-                    // Hide car on content slides
-                    carWrapper.classList.add('hidden');
-                }
+                // Resume roaming on every slide
+                startOrbit();
 
-                // Replay charts when their slides appear
                 if (currentSlide === 6) replayChart(demoChart);
                 animateSlideContent(currentSlide);
             }
         });
 
-        // If not coming from title, set car at edge for drive-through
-        if (!leavingTitle) {
-            gsap.set(carWrapper, {
-                left: dir > 0 ? -80 : vw + 80,
-                top: vh / 2,
-                rotation: dir > 0 ? -90 : 90,
-                scale: 0.8
-            });
-        }
-
-        // 1. Car rotates to face travel direction
-        if (leavingTitle) {
-            tl.to(carWrapper, {
-                rotation: dir > 0 ? -90 : 90,
-                duration: 0.2,
-                ease: 'power2.inOut'
-            }, 0);
-        }
-
-        // 2. Car drives across screen
-        const carDriveStart = leavingTitle ? 0.1 : 0;
-        tl.to(carWrapper, {
-            left: dir > 0 ? vw + 100 : -100,
-            top: vh / 2,
-            duration: 0.6,
-            ease: 'power2.inOut'
-        }, carDriveStart);
-
-        tl.to(carWrapper, {
-            scale: 1.1,
-            duration: 0.3,
-            ease: 'power2.in'
-        }, carDriveStart);
-
-        // 3. Slides translate
+        // 1. Slides translate
         tl.to(slidesContainer, {
             x: -idx * vw,
             duration: TRANSITION_DURATION,
             ease: 'power3.inOut'
-        }, 0.08);
+        }, 0);
 
-        // 4. If going to title, car reappears and starts orbiting (handled in onComplete)
-        if (goingToTitle) {
-            // Set car offscreen, orbit will position it
-            tl.set(carWrapper, {
-                left: vw / 2,
-                top: vh / 2,
-                rotation: 0,
-                scale: 1
-            }, TRANSITION_DURATION - 0.1);
-        }
-
-        // 5. Parallax on incoming slide content
+        // 2. Parallax on incoming slide content
         const nextSlideEl = document.querySelectorAll('.slide')[idx];
         if (nextSlideEl) {
             const content = nextSlideEl.querySelector('.slide-content');
