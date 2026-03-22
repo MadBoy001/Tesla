@@ -11,13 +11,11 @@
 </head>
 <body>
 
-    <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-bar"></div>
         <div class="loader-text">TESLA</div>
     </div>
 
-    <!-- Battery Progress Indicator -->
     <div class="battery-indicator" id="battery">
         <div class="battery-icon">
             <div class="battery-body-wrap">
@@ -28,25 +26,21 @@
         <span class="battery-text" id="batteryText">100%</span>
     </div>
 
-    <!-- Slide Counter -->
     <div class="slide-counter" id="slideCounter">
         <span class="counter-current" id="currentSlide">01</span>
         <div class="counter-line"></div>
         <span class="counter-total" id="totalSlides">10</span>
     </div>
 
-    <!-- Navigation Hint -->
     <div class="nav-hint" id="navHint">
         <div class="nav-hint-key">&#8592;</div>
         <span>Use arrow keys, scroll, or click edges</span>
         <div class="nav-hint-key">&#8594;</div>
     </div>
 
-    <!-- Click Navigation Zones -->
     <div class="click-zone click-zone-left" id="clickLeft"></div>
     <div class="click-zone click-zone-right" id="clickRight"></div>
 
-    <!-- SVG Car (bird's eye) -->
     <div class="car-wrapper" id="carWrapper">
         <div class="car-shadow"></div>
         <svg class="car-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
@@ -68,18 +62,14 @@
         <div class="car-trail" id="carTrail"></div>
     </div>
 
-    <!-- Slides Container -->
     <div class="slides-container" id="slidesContainer">
 
         <!-- SLIDE 1: Title -->
         <section class="slide slide-1" data-index="0">
-            <div class="slide-bg">
-                <div class="grid-overlay"></div>
-                <div class="radial-glow"></div>
-            </div>
+            <div class="slide-bg"><div class="grid-overlay"></div><div class="radial-glow"></div></div>
             <div class="slide-content">
                 <div class="title-group">
-                    <div class="overline">MARKETING STRATEGY &mdash; UNITED STATES</div>
+                    <div class="overline">MARKETING STRATEGY ANALYSIS &mdash; UNITED STATES</div>
                     <h1 class="hero-title">
                         <span class="hero-line">TESLA</span>
                         <span class="hero-line hero-outline">MODEL 3</span>
@@ -93,85 +83,173 @@
             </svg>
         </section>
 
-        <!-- SLIDE 2: Market Overview — 3 big stat cards -->
+        <!-- SLIDE 2: Executive Summary -->
         <section class="slide slide-2" data-index="1">
             <div class="slide-bg"><div class="grid-overlay"></div></div>
             <div class="slide-content">
                 <div class="section-number">01</div>
-                <h2 class="slide-heading">Market Overview</h2>
-                <p class="slide-subtitle">Tesla dominates the US electric vehicle market with unmatched brand equity and sales volume.</p>
+                <h2 class="slide-heading">Executive Summary</h2>
+                <p class="slide-subtitle">Analytical frameworks applied: SWOT, PESTEL, Porter's Five Forces, STP, Marketing Mix (4Ps &amp; 7Ps)</p>
                 <div class="cards-row">
                     <div class="info-card">
-                        <div class="card-value">$67B</div>
-                        <div class="card-label">US EV Market Size</div>
-                        <div class="card-desc">Projected 2026 market valuation</div>
-                    </div>
-                    <div class="info-card">
                         <div class="card-value">52%</div>
-                        <div class="card-label">Market Share</div>
-                        <div class="card-desc">Tesla's share of US EV sales</div>
+                        <div class="card-label">US EV Market Share</div>
+                        <div class="card-desc">Tesla leads all competitors combined in the $67B US EV market (Statista, 2025)</div>
                     </div>
                     <div class="info-card">
-                        <div class="card-value">#1</div>
-                        <div class="card-label">Best-Selling EV</div>
-                        <div class="card-desc">Model 3 leads the segment</div>
+                        <div class="card-value">$0</div>
+                        <div class="card-label">Annual Ad Spend</div>
+                        <div class="card-desc">Only major automaker with zero paid advertising budget (Bloomberg, 2024)</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-value">1.8M+</div>
+                        <div class="card-label">Global Deliveries</div>
+                        <div class="card-desc">Model 3 accounts for ~40% of total volume. Revenue: $96.8B (Tesla 10-K, 2024)</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 3: Sales Chart — full width bar chart -->
+        <!-- SLIDE 3: Marketing & Communication -->
         <section class="slide slide-3" data-index="2">
             <div class="slide-bg"><div class="grid-overlay"></div></div>
             <div class="slide-content">
                 <div class="section-number">02</div>
-                <h2 class="slide-heading">Sales Performance</h2>
-                <p class="slide-subtitle">Year-over-year growth despite increasing competition in the EV segment.</p>
-                <div class="chart-wrap">
-                    <canvas id="salesChart"></canvas>
+                <h2 class="slide-heading">Marketing &amp; Communication</h2>
+                <p class="slide-subtitle">Why strategic marketing is critical in the EV revolution</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">?</div></div>
+                        <div><h3>Why It Matters</h3>
+                        <p>EV market growing 23% CAGR through 2030. Brand perception drives 68% of purchase decisions. Traditional auto marketing costs $3,000-5,000 per vehicle &mdash; Tesla spends $0 (McKinsey, 2024)</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">&#9733;</div></div>
+                        <div><h3>What Tesla Does</h3>
+                        <p>Product-led growth with 91% owner satisfaction (JD Power). CEO social media with 200M+ followers generates $19B earned media annually. Referral program drove 425,000+ new orders</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">&lt;/&gt;</div></div>
+                        <div><h3>How It Works</h3>
+                        <p>Direct-to-consumer model controls brand narrative. Tesla stores in premium retail locations. OTA updates (40+/year) keep product fresh and generate ongoing media coverage</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">$0</div></div>
+                        <div><h3>Strategic Advantage</h3>
+                        <p>Zero advertising spend saves $3-5B annually vs legacy OEMs. Tesla ranks #1 in brand loyalty among EV manufacturers (Consumer Reports, 2024)</p></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 4: Marketing Channels — 2x2 icon grid -->
+        <!-- SLIDE 4: Company & Product -->
         <section class="slide slide-4" data-index="3">
             <div class="slide-bg"><div class="grid-overlay"></div></div>
             <div class="slide-content">
                 <div class="section-number">03</div>
-                <h2 class="slide-heading">Marketing Channels</h2>
-                <p class="slide-subtitle">A radically different approach to automotive marketing.</p>
-                <div class="strategy-grid">
-                    <div class="strategy-card">
-                        <div class="strat-icon-wrap"><div class="strat-icon">$0</div></div>
-                        <div><h3>Zero Ad Spend</h3>
-                        <p>No traditional TV, print, or radio advertising. Tesla relies entirely on organic demand.</p></div>
+                <h2 class="slide-heading">Company &amp; Product</h2>
+                <p class="slide-subtitle">Tesla Inc. &mdash; Founded 2003, HQ Austin, TX. Market Cap: ~$800B+ (2025)</p>
+                <div class="demo-layout">
+                    <div class="demo-chart-wrap" style="height:auto;padding:28px">
+                        <h3 style="color:#e82127;margin-bottom:14px;font-size:1rem">Model 3 Specifications</h3>
+                        <div style="color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.9">
+                            Launched: March 2017 &mdash; 400,000+ pre-orders in first week<br>
+                            MSRP: $38,990 (Standard) to $52,990 (Performance)<br>
+                            Range: 272-358 miles / 0-60 in 3.1-5.8s<br>
+                            Best-selling EV in US for 6 consecutive years<br>
+                            5-star NHTSA safety rating in every category<br>
+                            Revenue: $96.8B FY2024 (Tesla 10-K)
+                        </div>
                     </div>
-                    <div class="strategy-card">
-                        <div class="strat-icon-wrap"><div class="strat-icon">&lt;/&gt;</div></div>
-                        <div><h3>Social &amp; Digital</h3>
-                        <p>CEO-driven social media presence generates billions in earned media value annually.</p></div>
-                    </div>
-                    <div class="strategy-card">
-                        <div class="strat-icon-wrap"><div class="strat-icon">&hearts;</div></div>
-                        <div><h3>Word of Mouth</h3>
-                        <p>Referral programs and passionate owner community drive organic acquisition.</p></div>
-                    </div>
-                    <div class="strategy-card">
-                        <div class="strat-icon-wrap"><div class="strat-icon">&#9733;</div></div>
-                        <div><h3>Direct Sales</h3>
-                        <p>Company-owned stores &amp; online ordering eliminate the dealership model.</p></div>
+                    <div class="demo-stats">
+                        <div class="demo-stat">
+                            <span class="stat-val">$31,490</span>
+                            <span class="stat-lbl">Effective Price (After Tax Credit)</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">60%</span>
+                            <span class="stat-lbl">Lower Fuel Cost vs ICE</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">50%</span>
+                            <span class="stat-lbl">Less Maintenance Needed</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">15K+</span>
+                            <span class="stat-lbl">Supercharger Stations</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 5: Target Demographics — split chart + stats -->
+        <!-- SLIDE 5: SWOT Analysis -->
         <section class="slide slide-5" data-index="4">
             <div class="slide-bg"><div class="grid-overlay"></div></div>
             <div class="slide-content">
                 <div class="section-number">04</div>
-                <h2 class="slide-heading">Target Demographics</h2>
-                <p class="slide-subtitle">Understanding the Model 3 buyer persona.</p>
+                <h2 class="slide-heading">SWOT Analysis</h2>
+                <p class="slide-subtitle">Internal strengths/weaknesses and external opportunities/threats</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card" style="border-left:3px solid #2e7d32">
+                        <div class="strat-icon-wrap" style="background:rgba(46,125,50,0.15);border-color:rgba(46,125,50,0.2)"><div class="strat-icon" style="color:#4caf50">S</div></div>
+                        <div><h3 style="color:#4caf50">Strengths</h3>
+                        <p>91% owner satisfaction (JD Power). Tech leadership: Autopilot, FSD, OTA. Vertical integration: 4680 battery cells. Direct sales eliminates $2,000+ dealer markup. 15,000+ Supercharger network</p></div>
+                    </div>
+                    <div class="strategy-card" style="border-left:3px solid #c62828">
+                        <div class="strat-icon-wrap" style="background:rgba(198,40,40,0.15);border-color:rgba(198,40,40,0.2)"><div class="strat-icon" style="color:#ef5350">W</div></div>
+                        <div><h3 style="color:#ef5350">Weaknesses</h3>
+                        <p>Quality control: panel gaps reported by 23% of owners. Limited service centers: avg 45-min drive vs 15-min for legacy OEMs. High CEO brand dependency &mdash; PR volatility risk</p></div>
+                    </div>
+                    <div class="strategy-card" style="border-left:3px solid #1565c0">
+                        <div class="strat-icon-wrap" style="background:rgba(21,101,192,0.15);border-color:rgba(21,101,192,0.2)"><div class="strat-icon" style="color:#42a5f5">O</div></div>
+                        <div><h3 style="color:#42a5f5">Opportunities</h3>
+                        <p>US EV market projected $67B by 2026 (Statista). $7,500 IRA federal tax credit since 2023. Autonomous driving TAM: $300B+ by 2030 (Goldman Sachs). Fleet/commercial expansion</p></div>
+                    </div>
+                    <div class="strategy-card" style="border-left:3px solid #e65100">
+                        <div class="strat-icon-wrap" style="background:rgba(230,81,0,0.15);border-color:rgba(230,81,0,0.2)"><div class="strat-icon" style="color:#ff9800">T</div></div>
+                        <div><h3 style="color:#ff9800">Threats</h3>
+                        <p>BYD surpassed Tesla in global EV sales (Q4 2023). Legacy OEMs investing $500B+ in EV transition. Lithium prices rose 300% in 2022. Potential tax credit phase-out risk</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Porter's Five Forces -->
+        <section class="slide slide-6" data-index="5">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">05</div>
+                <h2 class="slide-heading">Porter&rsquo;s Five Forces</h2>
+                <p class="slide-subtitle">Micro &amp; macro competitive environment analysis</p>
+                <div class="compare-grid">
+                    <div class="compare-col compare-highlight">
+                        <div class="compare-header">Force &amp; Impact</div>
+                        <div class="compare-row"><span class="compare-label">Supplier Power</span><span class="compare-val" style="color:#ffb74d">Moderate</span></div>
+                        <div class="compare-row"><span class="compare-label">Buyer Power</span><span class="compare-val" style="color:#ffb74d">Moderate</span></div>
+                        <div class="compare-row"><span class="compare-label">New Entrants</span><span class="compare-val" style="color:#66bb6a">Low</span></div>
+                        <div class="compare-row"><span class="compare-label">Substitutes</span><span class="compare-val" style="color:#ffb74d">Moderate</span></div>
+                        <div class="compare-row"><span class="compare-label">Industry Rivalry</span><span class="compare-val" style="color:#ff5252">High</span></div>
+                    </div>
+                    <div class="compare-col">
+                        <div class="compare-header">Key Factors &amp; Analysis</div>
+                        <div class="compare-row"><span class="compare-val" style="font-weight:400;font-size:0.82rem">Limited lithium/cobalt suppliers; Gigafactory mitigates via 4680 cells</span></div>
+                        <div class="compare-row"><span class="compare-val" style="font-weight:400;font-size:0.82rem">30+ EV models by 2025 increase choice; 91% loyalty offsets switching</span></div>
+                        <div class="compare-row"><span class="compare-val" style="font-weight:400;font-size:0.82rem">$5B+ capital requirement; regulatory &amp; infrastructure barriers</span></div>
+                        <div class="compare-row"><span class="compare-val" style="font-weight:400;font-size:0.82rem">Hybrids, hydrogen, public transit; declining battery costs reduce threat</span></div>
+                        <div class="compare-row"><span class="compare-val" style="font-weight:400;font-size:0.82rem">BYD, Ford, GM, Hyundai, VW investing $500B+ combined in EVs</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: STP Analysis -->
+        <section class="slide slide-7" data-index="6">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">06</div>
+                <h2 class="slide-heading">STP Analysis</h2>
+                <p class="slide-subtitle">Segmentation, Targeting &amp; Positioning Strategy</p>
                 <div class="demo-layout">
                     <div class="demo-chart-wrap">
                         <canvas id="demoChart"></canvas>
@@ -179,195 +257,110 @@
                     <div class="demo-stats">
                         <div class="demo-stat">
                             <span class="stat-val">25&ndash;45</span>
-                            <span class="stat-lbl">Age Range</span>
+                            <span class="stat-lbl">Age Range / 72% Male</span>
                         </div>
                         <div class="demo-stat">
                             <span class="stat-val">$75K+</span>
-                            <span class="stat-lbl">Household Income</span>
+                            <span class="stat-lbl">HHI / College-Educated</span>
                         </div>
                         <div class="demo-stat">
                             <span class="stat-val">Urban</span>
-                            <span class="stat-lbl">Primary Location</span>
+                            <span class="stat-lbl">CA 28%, TX, FL, NY, WA</span>
                         </div>
                         <div class="demo-stat">
-                            <span class="stat-val">Tech</span>
-                            <span class="stat-lbl">Industry Affinity</span>
+                            <span class="stat-val">91%</span>
+                            <span class="stat-lbl">Owner Satisfaction (JD Power)</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 6: Competitive Landscape — comparison columns -->
-        <section class="slide slide-6" data-index="5">
-            <div class="slide-bg"><div class="grid-overlay"></div></div>
-            <div class="slide-content">
-                <div class="section-number">05</div>
-                <h2 class="slide-heading">Competitive Landscape</h2>
-                <p class="slide-subtitle">How Tesla stacks up against emerging EV competitors.</p>
-                <div class="compare-grid">
-                    <div class="compare-col compare-highlight">
-                        <div class="compare-header">Tesla Model 3</div>
-                        <div class="compare-row"><span class="compare-label">Starting Price</span><span class="compare-val">$38,990</span></div>
-                        <div class="compare-row"><span class="compare-label">Range</span><span class="compare-val">358 mi</span></div>
-                        <div class="compare-row"><span class="compare-label">0-60 mph</span><span class="compare-val">5.8s</span></div>
-                        <div class="compare-row"><span class="compare-label">Supercharger</span><span class="compare-val">15,000+</span></div>
-                        <div class="compare-row"><span class="compare-label">OTA Updates</span><span class="compare-val">Yes</span></div>
-                    </div>
-                    <div class="compare-col">
-                        <div class="compare-header">Competitors Avg.</div>
-                        <div class="compare-row"><span class="compare-label">Starting Price</span><span class="compare-val">$42,500</span></div>
-                        <div class="compare-row"><span class="compare-label">Range</span><span class="compare-val">280 mi</span></div>
-                        <div class="compare-row"><span class="compare-label">0-60 mph</span><span class="compare-val">6.5s</span></div>
-                        <div class="compare-row"><span class="compare-label">Fast Charge</span><span class="compare-val">Varies</span></div>
-                        <div class="compare-row"><span class="compare-label">OTA Updates</span><span class="compare-val">Limited</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 7: Brand Perception — big centered quote -->
-        <section class="slide slide-7" data-index="6">
-            <div class="slide-bg">
-                <div class="grid-overlay"></div>
-                <div class="radial-glow"></div>
-            </div>
-            <div class="slide-content">
-                <div class="section-number">06</div>
-                <h2 class="slide-heading">Brand Perception</h2>
-                <div class="quote-block">
-                    <div class="quote-mark">&ldquo;</div>
-                    <p class="quote-text">Tesla doesn't sell cars. It sells a vision of the future &mdash; and people buy into the mission before they buy the vehicle.</p>
-                    <div class="quote-divider"></div>
-                </div>
-                <div class="perception-metrics">
-                    <div class="metric">
-                        <span class="metric-val">94%</span>
-                        <span class="metric-label">Brand Awareness</span>
-                        <div class="metric-bar"><div class="metric-fill" style="width:94%"></div></div>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-val">87%</span>
-                        <span class="metric-label">Purchase Consideration</span>
-                        <div class="metric-bar"><div class="metric-fill" style="width:87%"></div></div>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-val">91%</span>
-                        <span class="metric-label">Owner Satisfaction</span>
-                        <div class="metric-bar"><div class="metric-fill" style="width:91%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 8: Digital Strategy — vertical timeline -->
+        <!-- SLIDE 8: Marketing Mix 4Ps -->
         <section class="slide slide-8" data-index="7">
             <div class="slide-bg"><div class="grid-overlay"></div></div>
             <div class="slide-content">
                 <div class="section-number">07</div>
-                <h2 class="slide-heading">Digital Ecosystem</h2>
-                <p class="slide-subtitle">A seamlessly connected digital experience from discovery to ownership.</p>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Discovery</h3>
-                            <p>Social media virality and organic search drive 78% of initial awareness.</p>
-                        </div>
+                <h2 class="slide-heading">Marketing Mix &mdash; 4Ps</h2>
+                <p class="slide-subtitle">Current marketing mix strategy analysis</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">P1</div></div>
+                        <div><h3>Product Strategy</h3>
+                        <p>358mi range, 15" touchscreen, Autopilot standard. FSD: $12K or $199/mo. 40+ OTA updates/year. 5-star NHTSA in every category</p></div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Configure &amp; Order</h3>
-                            <p>100% online ordering with transparent pricing. Average time: 8 minutes.</p>
-                        </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">P2</div></div>
+                        <div><h3>Price Strategy</h3>
+                        <p>$38,990-$52,990 range. Transparent pricing, zero dealer markup. $7,500 tax credit. Saves $6,000-8,000 over 5 years vs BMW 3 Series (Edmunds)</p></div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Delivery</h3>
-                            <p>Home delivery or pickup centers eliminate dealership friction entirely.</p>
-                        </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">P3</div></div>
+                        <div><h3>Place Strategy</h3>
+                        <p>100% direct-to-consumer. Online ordering in 8 min avg. 200+ Tesla stores in premium retail locations. 15,000+ Superchargers, NACS adopted as US standard</p></div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Ownership Loop</h3>
-                            <p>OTA updates, Tesla app, and Supercharger network create ongoing engagement.</p>
-                        </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">P4</div></div>
+                        <div><h3>Promotion Strategy</h3>
+                        <p>$0 paid advertising. $19B earned media from CEO (200M+ followers). Referral program: 425K+ sales. Product launches: Cybertruck unveil = 250M+ impressions</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 9: Pricing Strategy — big centered number -->
+        <!-- SLIDE 9: Recommendations -->
         <section class="slide slide-9" data-index="8">
-            <div class="slide-bg">
-                <div class="grid-overlay"></div>
-                <div class="radial-glow"></div>
-            </div>
+            <div class="slide-bg"><div class="grid-overlay"></div><div class="radial-glow"></div></div>
             <div class="slide-content">
                 <div class="section-number">08</div>
-                <h2 class="slide-heading">Pricing Strategy</h2>
-                <div class="pricing-hero">
-                    <div class="price-big">$38,990</div>
-                    <div class="price-sub">Starting MSRP &mdash; Most affordable Tesla ever</div>
-                </div>
-                <div class="pricing-pills">
-                    <div class="pill">
-                        <span class="pill-val">$7,500</span>
-                        <span class="pill-label">Federal Tax Credit</span>
+                <h2 class="slide-heading">Recommendations</h2>
+                <p class="slide-subtitle">4Ps, 7Ps &amp; STP strategy recommendations</p>
+                <div class="demo-layout">
+                    <div class="demo-chart-wrap" style="height:auto;padding:24px">
+                        <h3 style="color:#e82127;margin-bottom:12px;font-size:0.95rem">Marketing Mix (4Ps + 7Ps)</h3>
+                        <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;line-height:1.85">
+                            Launch sub-$30K variant to capture 60% of priced-out market<br>
+                            Implement dynamic pricing based on demand signals<br>
+                            Expand service centers by 40% (current wait: 2-3 weeks)<br>
+                            Targeted digital campaigns on YouTube/TikTok for Gen Z<br>
+                            <span style="color:#e82127;font-weight:700">7Ps:</span> Improve service training (ACSI below avg), streamline mobile service, redesign showrooms with VR test drives
+                        </div>
                     </div>
-                    <div class="pill">
-                        <span class="pill-val">$0</span>
-                        <span class="pill-label">Dealer Markup</span>
-                    </div>
-                    <div class="pill">
-                        <span class="pill-val">60%</span>
-                        <span class="pill-label">Lower Fuel Cost</span>
-                    </div>
-                    <div class="pill">
-                        <span class="pill-val">50%</span>
-                        <span class="pill-label">Less Maintenance</span>
+                    <div class="demo-chart-wrap" style="height:auto;padding:24px">
+                        <h3 style="color:#42a5f5;margin-bottom:12px;font-size:0.95rem">STP Strategy</h3>
+                        <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;line-height:1.85">
+                            Broaden target to mid-income ($50-75K HHI)<br>
+                            Strengthen positioning vs Chinese EVs (BYD, MG4)<br>
+                            Develop fleet/B2B segment for corporate ESG goals<br>
+                            Expand female targeting (currently only 28% women)<br>
+                            Position as 'best value in class' not 'cheapest Tesla'<br>
+                            Create subscription tier for younger buyers
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 10: Key Takeaways + Thank You -->
+        <!-- SLIDE 10: References + Thank You -->
         <section class="slide slide-10" data-index="9">
-            <div class="slide-bg">
-                <div class="grid-overlay"></div>
-                <div class="radial-glow"></div>
-            </div>
+            <div class="slide-bg"><div class="grid-overlay"></div><div class="radial-glow"></div></div>
             <div class="slide-content">
                 <div class="section-number">09</div>
-                <h2 class="slide-heading">Key Takeaways</h2>
+                <h2 class="slide-heading">References</h2>
                 <div class="takeaways">
-                    <div class="takeaway">
-                        <span class="tw-num">01</span>
-                        <p>Disrupted the traditional automotive marketing playbook with zero paid advertising.</p>
-                    </div>
-                    <div class="takeaway">
-                        <span class="tw-num">02</span>
-                        <p>Built brand equity through product excellence and aspirational positioning.</p>
-                    </div>
-                    <div class="takeaway">
-                        <span class="tw-num">03</span>
-                        <p>Direct-to-consumer model reduces cost and improves customer experience.</p>
-                    </div>
-                    <div class="takeaway">
-                        <span class="tw-num">04</span>
-                        <p>Community-driven growth creates a sustainable, compounding competitive advantage.</p>
-                    </div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>Statista (2025). US Electric Vehicle Market Report</p></div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>Tesla Inc. (2024). Annual Report &amp; Form 10-K Filing. SEC</p></div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>Porter, M.E. (1979). How Competitive Forces Shape Strategy. HBR</p></div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>Kotler &amp; Keller (2016). Marketing Management. 15th Ed. Pearson</p></div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>IEA (2025). Global EV Outlook / Bloomberg NEF (2025). EV Market Analysis</p></div>
+                    <div class="takeaway"><span class="tw-num">&bull;</span><p>McKinsey (2024). Future of Mobility / Deloitte (2025). Auto Consumer Study</p></div>
                 </div>
                 <div class="closing-line">Thank You</div>
             </div>
         </section>
 
-    </div><!-- /slides-container -->
+    </div>
 
-    <!-- Red accent line at top -->
     <div class="top-accent"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

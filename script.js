@@ -164,8 +164,7 @@
                 }
 
                 // Replay charts when their slides appear
-                if (currentSlide === 2) replayChart(salesChart);
-                if (currentSlide === 4) replayChart(demoChart);
+                if (currentSlide === 6) replayChart(demoChart);
                 animateSlideContent(currentSlide);
             }
         });
