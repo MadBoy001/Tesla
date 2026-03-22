@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Model 3 | Marketing Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-bar"></div>
+        <div class="loader-text">TESLA</div>
+    </div>
+
+    <!-- Battery Progress Indicator -->
+    <div class="battery-indicator" id="battery">
+        <div class="battery-icon">
+            <div class="battery-body-wrap">
+                <div class="battery-fill" id="batteryFill"></div>
+            </div>
+            <div class="battery-tip"></div>
+        </div>
+        <span class="battery-text" id="batteryText">100%</span>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">
+        <span class="counter-current" id="currentSlide">01</span>
+        <div class="counter-line"></div>
+        <span class="counter-total" id="totalSlides">10</span>
+    </div>
+
+    <!-- Navigation Hint -->
+    <div class="nav-hint" id="navHint">
+        <div class="nav-hint-key">&#8592;</div>
+        <span>Use arrow keys, scroll, or click edges</span>
+        <div class="nav-hint-key">&#8594;</div>
+    </div>
+
+    <!-- Click Navigation Zones -->
+    <div class="click-zone click-zone-left" id="clickLeft"></div>
+    <div class="click-zone click-zone-right" id="clickRight"></div>
+
+    <!-- SVG Car (bird's eye) -->
+    <div class="car-wrapper" id="carWrapper">
+        <div class="car-shadow"></div>
+        <svg class="car-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="15" width="80" height="170" rx="30" ry="35" fill="#e82127"/>
+            <rect x="22" y="65" width="56" height="80" rx="18" ry="18" fill="#1a1a2e"/>
+            <rect x="26" y="60" width="48" height="25" rx="12" ry="10" fill="#222238" opacity="0.7"/>
+            <rect x="26" y="120" width="48" height="20" rx="10" ry="8" fill="#222238" opacity="0.7"/>
+            <rect x="4" y="42" width="14" height="28" rx="5" fill="#222"/>
+            <rect x="82" y="42" width="14" height="28" rx="5" fill="#222"/>
+            <rect x="4" y="130" width="14" height="28" rx="5" fill="#222"/>
+            <rect x="82" y="130" width="14" height="28" rx="5" fill="#222"/>
+            <rect x="20" y="18" width="18" height="5" rx="2" fill="#fff" opacity="0.95"/>
+            <rect x="62" y="18" width="18" height="5" rx="2" fill="#fff" opacity="0.95"/>
+            <rect x="18" y="178" width="64" height="4" rx="2" fill="#ff0000" opacity="0.9"/>
+            <line x1="50" y1="25" x2="50" y2="55" stroke="#c41922" stroke-width="1.5" opacity="0.3"/>
+            <ellipse cx="6" cy="58" rx="5" ry="3" fill="#c41922"/>
+            <ellipse cx="94" cy="58" rx="5" ry="3" fill="#c41922"/>
+        </svg>
+        <div class="car-trail" id="carTrail"></div>
+    </div>
+
+    <!-- Slides Container -->
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- SLIDE 1: Title -->
+        <section class="slide slide-1" data-index="0">
+            <div class="slide-bg">
+                <div class="grid-overlay"></div>
+                <div class="radial-glow"></div>
+            </div>
+            <div class="slide-content">
+                <div class="title-group">
+                    <div class="overline">MARKETING STRATEGY &mdash; UNITED STATES</div>
+                    <h1 class="hero-title">
+                        <span class="hero-line">TESLA</span>
+                        <span class="hero-line hero-outline">MODEL 3</span>
+                    </h1>
+                    <div class="title-divider"></div>
+                    <p class="hero-tagline">Redefining How Cars Are Sold in America</p>
+                </div>
+            </div>
+            <svg class="orbit-ring" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+                <ellipse cx="500" cy="300" rx="380" ry="220" fill="none" stroke="rgba(232,33,39,0.07)" stroke-width="1.5" stroke-dasharray="8,6"/>
+            </svg>
+        </section>
+
+        <!-- SLIDE 2: Market Overview — 3 big stat cards -->
+        <section class="slide slide-2" data-index="1">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">01</div>
+                <h2 class="slide-heading">Market Overview</h2>
+                <p class="slide-subtitle">Tesla dominates the US electric vehicle market with unmatched brand equity and sales volume.</p>
+                <div class="cards-row">
+                    <div class="info-card">
+                        <div class="card-value">$67B</div>
+                        <div class="card-label">US EV Market Size</div>
+                        <div class="card-desc">Projected 2026 market valuation</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-value">52%</div>
+                        <div class="card-label">Market Share</div>
+                        <div class="card-desc">Tesla's share of US EV sales</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-value">#1</div>
+                        <div class="card-label">Best-Selling EV</div>
+                        <div class="card-desc">Model 3 leads the segment</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Sales Chart — full width bar chart -->
+        <section class="slide slide-3" data-index="2">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">02</div>
+                <h2 class="slide-heading">Sales Performance</h2>
+                <p class="slide-subtitle">Year-over-year growth despite increasing competition in the EV segment.</p>
+                <div class="chart-wrap">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Marketing Channels — 2x2 icon grid -->
+        <section class="slide slide-4" data-index="3">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">03</div>
+                <h2 class="slide-heading">Marketing Channels</h2>
+                <p class="slide-subtitle">A radically different approach to automotive marketing.</p>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">$0</div></div>
+                        <div><h3>Zero Ad Spend</h3>
+                        <p>No traditional TV, print, or radio advertising. Tesla relies entirely on organic demand.</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">&lt;/&gt;</div></div>
+                        <div><h3>Social &amp; Digital</h3>
+                        <p>CEO-driven social media presence generates billions in earned media value annually.</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">&hearts;</div></div>
+                        <div><h3>Word of Mouth</h3>
+                        <p>Referral programs and passionate owner community drive organic acquisition.</p></div>
+                    </div>
+                    <div class="strategy-card">
+                        <div class="strat-icon-wrap"><div class="strat-icon">&#9733;</div></div>
+                        <div><h3>Direct Sales</h3>
+                        <p>Company-owned stores &amp; online ordering eliminate the dealership model.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Target Demographics — split chart + stats -->
+        <section class="slide slide-5" data-index="4">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">04</div>
+                <h2 class="slide-heading">Target Demographics</h2>
+                <p class="slide-subtitle">Understanding the Model 3 buyer persona.</p>
+                <div class="demo-layout">
+                    <div class="demo-chart-wrap">
+                        <canvas id="demoChart"></canvas>
+                    </div>
+                    <div class="demo-stats">
+                        <div class="demo-stat">
+                            <span class="stat-val">25&ndash;45</span>
+                            <span class="stat-lbl">Age Range</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">$75K+</span>
+                            <span class="stat-lbl">Household Income</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">Urban</span>
+                            <span class="stat-lbl">Primary Location</span>
+                        </div>
+                        <div class="demo-stat">
+                            <span class="stat-val">Tech</span>
+                            <span class="stat-lbl">Industry Affinity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Competitive Landscape — comparison columns -->
+        <section class="slide slide-6" data-index="5">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">05</div>
+                <h2 class="slide-heading">Competitive Landscape</h2>
+                <p class="slide-subtitle">How Tesla stacks up against emerging EV competitors.</p>
+                <div class="compare-grid">
+                    <div class="compare-col compare-highlight">
+                        <div class="compare-header">Tesla Model 3</div>
+                        <div class="compare-row"><span class="compare-label">Starting Price</span><span class="compare-val">$38,990</span></div>
+                        <div class="compare-row"><span class="compare-label">Range</span><span class="compare-val">358 mi</span></div>
+                        <div class="compare-row"><span class="compare-label">0-60 mph</span><span class="compare-val">5.8s</span></div>
+                        <div class="compare-row"><span class="compare-label">Supercharger</span><span class="compare-val">15,000+</span></div>
+                        <div class="compare-row"><span class="compare-label">OTA Updates</span><span class="compare-val">Yes</span></div>
+                    </div>
+                    <div class="compare-col">
+                        <div class="compare-header">Competitors Avg.</div>
+                        <div class="compare-row"><span class="compare-label">Starting Price</span><span class="compare-val">$42,500</span></div>
+                        <div class="compare-row"><span class="compare-label">Range</span><span class="compare-val">280 mi</span></div>
+                        <div class="compare-row"><span class="compare-label">0-60 mph</span><span class="compare-val">6.5s</span></div>
+                        <div class="compare-row"><span class="compare-label">Fast Charge</span><span class="compare-val">Varies</span></div>
+                        <div class="compare-row"><span class="compare-label">OTA Updates</span><span class="compare-val">Limited</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Brand Perception — big centered quote -->
+        <section class="slide slide-7" data-index="6">
+            <div class="slide-bg">
+                <div class="grid-overlay"></div>
+                <div class="radial-glow"></div>
+            </div>
+            <div class="slide-content">
+                <div class="section-number">06</div>
+                <h2 class="slide-heading">Brand Perception</h2>
+                <div class="quote-block">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">Tesla doesn't sell cars. It sells a vision of the future &mdash; and people buy into the mission before they buy the vehicle.</p>
+                    <div class="quote-divider"></div>
+                </div>
+                <div class="perception-metrics">
+                    <div class="metric">
+                        <span class="metric-val">94%</span>
+                        <span class="metric-label">Brand Awareness</span>
+                        <div class="metric-bar"><div class="metric-fill" style="width:94%"></div></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-val">87%</span>
+                        <span class="metric-label">Purchase Consideration</span>
+                        <div class="metric-bar"><div class="metric-fill" style="width:87%"></div></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-val">91%</span>
+                        <span class="metric-label">Owner Satisfaction</span>
+                        <div class="metric-bar"><div class="metric-fill" style="width:91%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Digital Strategy — vertical timeline -->
+        <section class="slide slide-8" data-index="7">
+            <div class="slide-bg"><div class="grid-overlay"></div></div>
+            <div class="slide-content">
+                <div class="section-number">07</div>
+                <h2 class="slide-heading">Digital Ecosystem</h2>
+                <p class="slide-subtitle">A seamlessly connected digital experience from discovery to ownership.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Discovery</h3>
+                            <p>Social media virality and organic search drive 78% of initial awareness.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Configure &amp; Order</h3>
+                            <p>100% online ordering with transparent pricing. Average time: 8 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Delivery</h3>
+                            <p>Home delivery or pickup centers eliminate dealership friction entirely.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Ownership Loop</h3>
+                            <p>OTA updates, Tesla app, and Supercharger network create ongoing engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Pricing Strategy — big centered number -->
+        <section class="slide slide-9" data-index="8">
+            <div class="slide-bg">
+                <div class="grid-overlay"></div>
+                <div class="radial-glow"></div>
+            </div>
+            <div class="slide-content">
+                <div class="section-number">08</div>
+                <h2 class="slide-heading">Pricing Strategy</h2>
+                <div class="pricing-hero">
+                    <div class="price-big">$38,990</div>
+                    <div class="price-sub">Starting MSRP &mdash; Most affordable Tesla ever</div>
+                </div>
+                <div class="pricing-pills">
+                    <div class="pill">
+                        <span class="pill-val">$7,500</span>
+                        <span class="pill-label">Federal Tax Credit</span>
+                    </div>
+                    <div class="pill">
+                        <span class="pill-val">$0</span>
+                        <span class="pill-label">Dealer Markup</span>
+                    </div>
+                    <div class="pill">
+                        <span class="pill-val">60%</span>
+                        <span class="pill-label">Lower Fuel Cost</span>
+                    </div>
+                    <div class="pill">
+                        <span class="pill-val">50%</span>
+                        <span class="pill-label">Less Maintenance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Key Takeaways + Thank You -->
+        <section class="slide slide-10" data-index="9">
+            <div class="slide-bg">
+                <div class="grid-overlay"></div>
+                <div class="radial-glow"></div>
+            </div>
+            <div class="slide-content">
+                <div class="section-number">09</div>
+                <h2 class="slide-heading">Key Takeaways</h2>
+                <div class="takeaways">
+                    <div class="takeaway">
+                        <span class="tw-num">01</span>
+                        <p>Disrupted the traditional automotive marketing playbook with zero paid advertising.</p>
+                    </div>
+                    <div class="takeaway">
+                        <span class="tw-num">02</span>
+                        <p>Built brand equity through product excellence and aspirational positioning.</p>
+                    </div>
+                    <div class="takeaway">
+                        <span class="tw-num">03</span>
+                        <p>Direct-to-consumer model reduces cost and improves customer experience.</p>
+                    </div>
+                    <div class="takeaway">
+                        <span class="tw-num">04</span>
+                        <p>Community-driven growth creates a sustainable, compounding competitive advantage.</p>
+                    </div>
+                </div>
+                <div class="closing-line">Thank You</div>
+            </div>
+        </section>
+
+    </div><!-- /slides-container -->
+
+    <!-- Red accent line at top -->
+    <div class="top-accent"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
