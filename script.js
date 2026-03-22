@@ -33,9 +33,11 @@
         carWrapper      = document.getElementById('carWrapper');
 
         buildTrail();
+        buildSlideNav();
         initCharts();
         initEvents();
         updateBattery();
+        updateSlideNav();
         animateSlideContent(0);
         startOrbit();
 
@@ -44,6 +46,7 @@
             loader.classList.add('hidden');
             document.querySelector('.battery-indicator').classList.add('visible');
             document.querySelector('.slide-counter').classList.add('visible');
+            document.querySelector('.slide-nav').classList.add('visible');
         }, 1200);
 
         // hide nav hint
@@ -155,6 +158,7 @@
                 isTransitioning = false;
                 updateBattery();
                 updateCounter();
+                updateSlideNav();
 
                 if (goingToTitle) {
                     startOrbit();
@@ -232,6 +236,27 @@
                 );
             }
         }
+    }
+
+    // =============================================
+    //  SLIDE NAV BAR
+    // =============================================
+    function buildSlideNav() {
+        const nav = document.getElementById('slideNav');
+        for (let i = 0; i < TOTAL_SLIDES; i++) {
+            const item = document.createElement('div');
+            item.className = 'slide-nav-item';
+            item.textContent = String(i + 1).padStart(2, '0');
+            item.addEventListener('click', () => goTo(i));
+            nav.appendChild(item);
+        }
+    }
+
+    function updateSlideNav() {
+        const items = document.querySelectorAll('.slide-nav-item');
+        items.forEach((item, i) => {
+            item.classList.toggle('active', i === currentSlide);
+        });
     }
 
     // =============================================

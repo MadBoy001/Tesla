@@ -133,6 +133,48 @@ body::after {
     border-bottom-color: var(--tesla-red);
 }
 
+/* ===== SLIDE NAV BAR ===== */
+.slide-nav {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slide-nav.visible { opacity: 1; }
+.slide-nav-item {
+    width: 32px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.02);
+    font-family: var(--font);
+}
+.slide-nav-item:hover {
+    color: var(--tesla-red);
+    border-color: rgba(232,33,39,0.3);
+    background: rgba(232,33,39,0.06);
+}
+.slide-nav-item.active {
+    color: var(--tesla-red);
+    border-color: var(--tesla-red);
+    background: rgba(232,33,39,0.1);
+    box-shadow: 0 0 12px var(--tesla-dim);
+}
+
 /* ===== LOADER ===== */
 .loader {
     position: fixed;
@@ -635,6 +677,30 @@ body::after {
     font-size: 0.85rem;
     color: var(--text-dim);
     line-height: 1.55;
+}
+.strategy-card ul, .card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.strategy-card ul li, .card-list li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 4px;
+}
+.strategy-card ul li::before, .card-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--tesla-red);
+    box-shadow: 0 0 6px var(--tesla-dim);
 }
 
 /* ===== DEMOGRAPHICS (Slide 5) ===== */
