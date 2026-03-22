@@ -13,7 +13,7 @@
 
     // ── DOM refs ──
     let slidesContainer, batteryFill, batteryText,
-        currentSlideEl, navHint, loader, carWrapper;
+        currentSlideEl, loader, carWrapper;
 
     // ── Trail ──
     let trailPositions = [];
@@ -28,7 +28,6 @@
         batteryFill     = document.getElementById('batteryFill');
         batteryText     = document.getElementById('batteryText');
         currentSlideEl  = document.getElementById('currentSlide');
-        navHint         = document.getElementById('navHint');
         loader          = document.getElementById('loader');
         carWrapper      = document.getElementById('carWrapper');
 
@@ -49,10 +48,6 @@
             document.querySelector('.slide-nav').classList.add('visible');
         }, 1200);
 
-        // hide nav hint
-        setTimeout(() => {
-            gsap.to(navHint, { opacity: 0, duration: 0.8, onComplete: () => navHint.style.display = 'none' });
-        }, 5000);
     }
 
     // =============================================
@@ -280,7 +275,7 @@
         if (!slide) return;
         const els = slide.querySelectorAll(
             '.info-card, .strategy-card, .takeaway, .demo-stat, ' +
-            '.slide-heading, .section-number, .slide-subtitle, ' +
+            '.slide-heading, .section-number, .slide-label, .slide-subtitle, ' +
             '.chart-wrap, .demo-chart-wrap, .closing-line, ' +
             '.hero-line, .overline, .hero-tagline, .title-divider, ' +
             '.compare-col, .quote-block, .metric, .timeline-item, ' +
