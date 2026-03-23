@@ -14,8 +14,8 @@
     --bg-card-hover: rgba(255, 255, 255, 0.07);
     --border-card: rgba(255, 255, 255, 0.08);
     --text-primary: #f0f0f0;
-    --text-secondary: rgba(255, 255, 255, 0.5);
-    --text-dim: rgba(255, 255, 255, 0.25);
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-dim: rgba(255, 255, 255, 0.45);
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -428,8 +428,8 @@ body::after {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1100px;
-    padding: 60px 80px;
+    max-width: 100%;
+    padding: 50px 60px;
 }
 
 /* ===== SLIDE 1: HERO ===== */
@@ -516,7 +516,7 @@ body::after {
     font-size: 6rem;
     font-weight: 900;
     color: var(--tesla-red);
-    opacity: 0.3;
+    opacity: 0.4;
     line-height: 1;
     margin-bottom: -18px;
     letter-spacing: -0.02em;
@@ -525,33 +525,33 @@ body::after {
 
 /* ===== SLIDE HEADINGS ===== */
 .slide-heading {
-    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
     letter-spacing: -0.02em;
     margin-bottom: 10px;
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .slide-label {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--tesla-red);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    padding: 4px 12px;
-    border: 1px solid rgba(232, 33, 39, 0.25);
+    padding: 5px 14px;
+    border: 1px solid rgba(232, 33, 39, 0.3);
     border-radius: 20px;
-    margin-bottom: 8px;
-    background: rgba(232, 33, 39, 0.06);
+    margin-bottom: 12px;
+    background: rgba(232, 33, 39, 0.08);
 }
 
 .slide-subtitle {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 400;
     font-style: italic;
     color: var(--text-secondary);
-    max-width: 680px;
+    max-width: 100%;
     line-height: 1.6;
     margin-bottom: 36px;
 }
@@ -613,17 +613,17 @@ body::after {
 }
 
 .card-label {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 5px;
+    color: var(--tesla-red);
+    margin-bottom: 8px;
     position: relative; z-index: 1;
 }
 
 .card-desc {
-    font-size: 0.88rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
     position: relative; z-index: 1;
 }
 
@@ -757,11 +757,11 @@ body::after {
 }
 .strategy-card ul li, .card-list li {
     position: relative;
-    padding-left: 14px;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 5px;
+    padding-left: 16px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 6px;
 }
 .strategy-card ul li::before, .card-list li::before {
     content: '';
@@ -892,28 +892,31 @@ body::after {
 .compact-card { padding: 20px 24px; }
 
 /* PESTEL mini */
-.pestel-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.pestel-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
 .pestel-mini {
-    font-size: 0.8rem; color: var(--text-dim); padding: 6px 10px;
-    background: rgba(255,255,255,0.02); border-radius: 8px;
+    font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 10px 12px;
+    background: rgba(255,255,255,0.03); border-radius: 8px; line-height: 1.5;
 }
-.pestel-letter-mini { font-weight: 900; font-size: 1rem; margin-right: 6px; }
+.pestel-mini small {
+    display: block; margin-top: 4px; font-size: 0.78rem; color: rgba(255,255,255,0.55);
+}
+.pestel-letter-mini { font-weight: 900; font-size: 1.1rem; margin-right: 6px; }
 
 /* Porter mini */
-.porter-rows { margin-top: 10px; }
+.porter-rows { margin-top: 12px; }
 .porter-row {
-    display: flex; justify-content: space-between; padding: 7px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem;
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.92rem;
 }
 .porter-row:last-child { border-bottom: none; }
-.porter-force { color: var(--text-secondary); }
-.porter-level { color: var(--text-dim); font-weight: 700; }
+.porter-force { color: rgba(255,255,255,0.9); font-weight: 600; }
+.porter-level { font-weight: 800; }
 
 /* SWOT mini */
-.swot-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.swot-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
 .swot-mini {
-    font-size: 0.78rem; color: var(--text-dim); padding: 8px 10px;
-    background: rgba(255,255,255,0.02); border-radius: 8px;
+    font-size: 0.88rem; color: rgba(255,255,255,0.85); padding: 10px 12px;
+    background: rgba(255,255,255,0.03); border-radius: 8px; line-height: 1.5;
 }
 
 /* ===== STP LAYOUT (Slide 4) ===== */
