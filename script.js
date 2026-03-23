@@ -2,7 +2,7 @@
     'use strict';
 
     // ── Config ──
-    const TOTAL_SLIDES = 7;
+    const TOTAL_SLIDES = 6;
     const TRANSITION_DURATION = 1.2;
     const ORBIT_DURATION = 10;
 

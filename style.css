@@ -383,7 +383,7 @@ body::after {
 /* ===== SLIDES CONTAINER ===== */
 .slides-container {
     display: flex;
-    width: 700vw;
+    width: 600vw;
     height: 100vh;
     will-change: transform;
 }
