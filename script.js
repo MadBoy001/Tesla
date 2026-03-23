@@ -2,7 +2,7 @@
     'use strict';
 
     // ── Config ──
-    const TOTAL_SLIDES = 10;
+    const TOTAL_SLIDES = 6;
     const TRANSITION_DURATION = 1.2;
     const ORBIT_DURATION = 10;
 
@@ -33,7 +33,6 @@
 
         buildTrail();
         buildSlideNav();
-        initCharts();
         initEvents();
         updateBattery();
         updateSlideNav();
@@ -183,7 +182,6 @@
                 // Resume roaming on every slide
                 startOrbit();
 
-                if (currentSlide === 6) replayChart(demoChart);
                 animateSlideContent(currentSlide);
             }
         });
@@ -265,94 +263,6 @@
                 { y: 0, duration: 0.45, delay: i * 0.05, ease: 'power2.out' }
             );
         });
-    }
-
-    // =============================================
-    //  CHARTS
-    // =============================================
-    let salesChart, demoChart;
-
-    function initCharts() {
-        const red = 'rgba(232,33,39,';
-        const sCtx = document.getElementById('salesChart');
-        if (sCtx) {
-            salesChart = new Chart(sCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
-                    datasets: [{
-                        label: 'Model 3 US Sales (thousands)',
-                        data: [154, 122, 176, 252, 209, 235, 268],
-                        backgroundColor: [
-                            red + '0.25)', red + '0.3)', red + '0.4)',
-                            red + '0.6)', red + '0.5)', red + '0.75)', red + '0.9)'
-                        ],
-                        borderColor: red + '1)',
-                        borderWidth: 2,
-                        borderRadius: 8
-                    }]
-                },
-                options: chartOpts(true)
-            });
-        }
-
-        const dCtx = document.getElementById('demoChart');
-        if (dCtx) {
-            demoChart = new Chart(dCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Tech Pros', 'Eco-Conscious', 'Early Adopters', 'Luxury Buyers', 'Fleet Ops'],
-                    datasets: [{
-                        data: [35, 25, 20, 12, 8],
-                        backgroundColor: ['#e82127', '#ff5722', '#ff9800', '#ffc107', '#ffeb3b'],
-                        borderWidth: 0,
-                        hoverOffset: 10
-                    }]
-                },
-                options: chartOpts(false)
-            });
-        }
-    }
-
-    function chartOpts(isBar) {
-        const base = {
-            responsive: true,
-            maintainAspectRatio: false,
-            animation: { duration: 1400, easing: 'easeOutQuart' },
-            plugins: {
-                legend: {
-                    labels: {
-                        font: { family: "'Inter', sans-serif", size: 12 },
-                        usePointStyle: true,
-                        padding: 14,
-                        color: 'rgba(255,255,255,0.7)'
-                    }
-                }
-            }
-        };
-        if (isBar) {
-            base.scales = {
-                y: {
-                    beginAtZero: true,
-                    grid: { color: 'rgba(255,255,255,0.06)' },
-                    ticks: { font: { family: "'Inter'" }, color: 'rgba(255,255,255,0.5)' }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: { font: { family: "'Inter'" }, color: 'rgba(255,255,255,0.5)' }
-                }
-            };
-            base.plugins.legend.position = 'top';
-        } else {
-            base.plugins.legend.position = 'bottom';
-        }
-        return base;
-    }
-
-    function replayChart(chart) {
-        if (!chart) return;
-        chart.reset();
-        chart.update();
     }
 
     // =============================================
