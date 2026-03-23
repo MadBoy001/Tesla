@@ -229,28 +229,32 @@ async function build() {
     s5.addText(PH, { x: 0.7, y: 5.08, w: 8.6, h: 0.3, ...phStyle });
 
     // ═══════════════════════════════════════
-    // SLIDE 6: EXEC SUMMARY + REFS
+    // SLIDE 6: EXECUTIVE SUMMARY
     // ═══════════════════════════════════════
     let s6 = pres.addSlide();
     s6.background = { color: C.dark };
-    topBar(s6); botBar(s6);
+    topBar(s6);
+    hdr(s6, "05", "Executive Summary");
 
-    s6.addText("Executive Summary", { x: 0.5, y: 0.4, w: 9, h: 0.5, fontSize: 24, fontFace: "Arial Black", color: C.white, align: "center", margin: 0 });
+    s6.addShape(R, { x: 0.5, y: 1.3, w: 9.0, h: 4.0, fill: { color: C.card }, shadow: mkS() });
+    s6.addShape(R, { x: 0.5, y: 1.3, w: 9.0, h: 0.035, fill: { color: C.red } });
+    s6.addText("Executive Summary", { x: 0.65, y: 1.4, w: 4, h: 0.22, fontSize: 10, fontFace: "Arial", color: C.red, bold: true, margin: 0 });
+    s6.addText(PH, { x: 0.65, y: 1.7, w: 8.7, h: 3.4, ...phStyle });
 
-    // 7 numbered placeholder lines
-    for (let i = 0; i < 7; i++) {
-        s6.addText([
-            { text: "0" + (i + 1) + "  ", options: { fontSize: 10, color: C.red, bold: true, fontFace: "Arial Black" } },
-            { text: PH, options: { fontSize: 9, color: C.dim, fontFace: "Arial" } },
-        ], { x: 1.0, y: 1.05 + i * 0.45, w: 8, h: 0.4, margin: 0 });
-    }
+    // ═══════════════════════════════════════
+    // SLIDE 7: REFERENCES
+    // ═══════════════════════════════════════
+    let s7 = pres.addSlide();
+    s7.background = { color: C.dark };
+    topBar(s7); botBar(s7);
+    hdr(s7, "06", "References", "Sources & Citations");
 
-    // References
-    s6.addShape(R, { x: 0.5, y: 4.3, w: 9.0, h: 0.03, fill: { color: C.border } });
-    s6.addText("REFERENCES", { x: 0.5, y: 4.38, w: 3, h: 0.2, fontSize: 8, fontFace: "Arial", color: C.red, charSpacing: 3, bold: true, margin: 0 });
-    s6.addText(PH, { x: 0.5, y: 4.6, w: 9.0, h: 0.55, fontSize: 7, fontFace: "Arial", color: C.dim, margin: 0 });
+    s7.addShape(R, { x: 0.5, y: 1.3, w: 9.0, h: 3.5, fill: { color: C.card }, shadow: mkS() });
+    s7.addShape(R, { x: 0.5, y: 1.3, w: 9.0, h: 0.035, fill: { color: C.red } });
+    s7.addText("References", { x: 0.65, y: 1.4, w: 4, h: 0.22, fontSize: 10, fontFace: "Arial", color: C.red, bold: true, margin: 0 });
+    s7.addText(PH, { x: 0.65, y: 1.7, w: 8.7, h: 2.9, ...phStyle });
 
-    s6.addText("Thank You", { x: 0, y: 5.2, w: 10, h: 0.3, fontSize: 16, fontFace: "Arial Black", color: C.red, align: "center" });
+    s7.addText("Thank You", { x: 0, y: 5.1, w: 10, h: 0.35, fontSize: 18, fontFace: "Arial Black", color: C.red, align: "center" });
 
     await pres.writeFile({ fileName: "C:/laragon/www/tesla/Tesla_Model3_Marketing.pptx" });
     console.log("Done! Saved: Tesla_Model3_Marketing.pptx (empty cards, ready to fill)");
